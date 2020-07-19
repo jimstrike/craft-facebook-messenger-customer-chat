@@ -1,0 +1,16 @@
+###> project ###
+node_modules/
+composer.phar
+.buildpath
+.project
+.settings/
+.idea
+.DS_Store
+*Thumbs.db
+*.log
+*.bak
+*.zip
+*.gz
+*_old
+error_log
+###< project ###

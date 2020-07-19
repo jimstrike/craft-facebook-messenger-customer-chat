@@ -1,0 +1,122 @@
+{##
+ # Messenger Customer Chat plugin for Craft CMS 3.x
+ #
+ # Let people start a conversation on your website and continue in Messenger. 
+ # Allows your customers to interact with your business anytime with the same personalized, 
+ # rich-media experience they get in Messenger.
+ #
+ # @link      https://github.com/jimstrike
+ # @copyright Copyright (c) 2020 Dhimiter Karalliu
+ # @license   https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/LICENSE.md
+ #}
+<!doctype html>
+<html lang="{{ craft.app.language }}">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>{{ 'global.preview'|t(plugin.handle) }} - {{ plugin.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <style>
+        html,
+        body {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            height: 100%;
+            font-family: system-ui, BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: hsl(212, 10%, 93%);
+            color: hsl(212, 20%, 20%);
+            display: flex;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 3.3em;
+        }
+
+        h2 {
+            font-size: 1em;
+            line-height: 0.5em;
+        }
+
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        select {
+            max-width: 150px;
+        }
+
+        #container {
+            flex-grow: 1;
+        }
+
+        #modal {
+            background: #fff;
+        }
+
+        .content {
+            padding: 35px;
+            padding-left: calc(35px + env(safe-area-inset-left));
+            padding-right: calc(35px + env(safe-area-inset-right));
+            text-align: center;
+        }
+
+        .warning {
+            color: red;
+        }
+
+        @media (min-width:480px) {
+            #container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body class="ltr">
+    {{ sdkSnippet|raw }}
+    <div id="container">
+        <div id="modal">
+            <div id="main">
+                <div class="content">
+                    <h2>{{ plugin.name }}</h2>
+                    <h1>{{ 'global.preview'|t('fbmcc') }}</h1>
+                    <form action="" method="get" accept-charset="UTF-8">
+                        <select name="site" onchange="this.form.submit()">
+                            <option value="">{{ 'preview.with.site'|t('fbmcc') }} &not;</option>
+                            <option disabled></option>
+                            {% for site in craft.app.sites.allSites %}
+                                <option value="{{ site.handle }}"{{ site.handle == currentSite.handle ? ' selected' : '' }}>{{ site.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <select name="locale" onchange="this.form.submit()">
+                            <option value="">{{ 'preview.with.locale'|t('fbmcc') }} &not;</option>
+                            <option disabled></option>
+                            {% for option in sdkLocaleOptions %}
+                                <option value="{{ option.value }}"{{ sdkLocale == option.value ? ' selected' : '' }}>{{ option.label }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type"submit">&rarr;</button>
+                        <p><small>{{ 'preview.not.supported.locale.default'|t('fbmcc', {'locale': '<code>en_US</code>'})|raw }}</small></p>
+
+                        {% if plugin.settings.getPageId(currentSite.id) is empty or not plugin.settings.getPageId(currentSite.id)|fbmcc_is_numeric %}
+                            <hr>
+                            <small class="warning">{{ 'preview.invalid.facebook.page.id'|t('fbmcc') }}</small> |
+                            <a href="{{ url('fbmcc/settings', {'site': currentSite.handle}) }}"><small>{{ 'Settings'|t('app') }}</small></a> &rsaquo;
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

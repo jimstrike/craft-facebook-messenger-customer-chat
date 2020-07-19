@@ -1,0 +1,282 @@
+{##
+ # Messenger Customer Chat plugin for Craft CMS 3.x
+ #
+ # Let people start a conversation on your website and continue in Messenger. 
+ # Allows your customers to interact with your business anytime with the same personalized, 
+ # rich-media experience they get in Messenger.
+ #
+ # @link      https://github.com/jimstrike
+ # @copyright Copyright (c) 2020 Dhimiter Karalliu
+ # @license   https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/LICENSE.md
+ #}
+{% import "_includes/forms" as forms %}
+
+{% set settings = plugin.settings %}
+
+{# ********************************************************************** #}
+
+{{ actionInput('fbmcc/default/save-settings') }}
+{{ redirectInput('fbmcc/settings?site=' ~ site.handle) }}
+{{ csrfInput() }}
+<input type="hidden" name="siteId" value="{{ site.id }}">
+
+{# ------------------------------- #}
+
+{{ forms.textField({
+    first: true,
+    label: 'settings.page_id.label'|t('fbmcc'),
+    instructions: 'settings.page_id.instructions'|t('fbmcc'),
+    name: 'settings[pageId]',
+    value: settings.getPageId(site.id),
+    required: true,
+    warning: _self.configWarning('pageId', site.id)|trim,
+    errors: settings.getPageId(site.id) is empty or not settings.getPageId(site.id)|fbmcc_is_numeric ? 
+        ['settings.page_id.errors.blank'|t('fbmcc')] : null
+}) }}
+
+<a href="{{ url('fbmcc/preview', {'site': site.handle}) }}" class="btn" target="_blank">{{ 'global.preview'|t('fbmcc') }} &nearr;</a>
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.lightswitchField({
+    label: 'settings.enabled.label'|t('fbmcc', {'plugin.name': "&quot;#{plugin.name}&quot;"}),
+    instructions: 'settings.enabled.instructions'|t('fbmcc'),
+    name: 'settings[enabled]',
+    value: 1,
+    required: false,
+    warning: _self.configWarning('enabled', site.id)|trim,
+    on: settings.getEnabled(site.id)
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.selectField({
+    label: 'settings.sdk_locale.label'|t('fbmcc'),
+    instructions: 'settings.sdk_locale.instructions'|t('fbmcc'),
+    name: 'settings[sdkLocale]',
+    value: settings.getSdkLocale(site.id),
+    options: sdkLocaleOptions,
+    required: false,
+    warning: _self.configWarning('sdkLocale', site.id)|trim,
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.colorField({
+    label: 'settings.theme_color.label'|t('fbmcc'),
+    instructions: 'settings.theme_color.instructions'|t('fbmcc'),
+    name: 'settings[themeColor]',
+    value: settings.getThemeColor(site.id),
+    required: false,
+    warning: _self.configWarning('themeColor', site.id)|trim,
+    maxlength: 7
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.textField({
+    label: 'settings.logged_in_greeting.label'|t('fbmcc'),
+    instructions: 'settings.logged_in_greeting.instructions'|t('fbmcc'),
+    name: 'settings[loggedInGreeting]',
+    value: settings.getLoggedInGreeting(site.id),
+    required: false,
+    warning: _self.configWarning('loggedInGreeting', site.id)|trim,
+    maxlength: 80
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.textField({
+    label: 'settings.logged_out_greeting.label'|t('fbmcc'),
+    instructions: 'settings.logged_out_greeting.instructions'|t('fbmcc'),
+    name: 'settings[loggedOutGreeting]',
+    value: settings.getLoggedOutGreeting(site.id),
+    required: false,
+    warning: _self.configWarning('loggedOutGreeting', site.id)|trim,
+    maxlength: 80
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.selectField({
+    label: 'settings.greeting_dialog_display.label'|t('fbmcc'),
+    instructions: 'settings.greeting_dialog_display.instructions'|t('fbmcc'),
+    name: 'settings[greetingDialogDisplay]',
+    value: settings.getGreetingDialogDisplay(site.id),
+    options: [
+        {
+            'label': 'global.hide'|t('fbmcc'),
+            'value': 'hide',
+        },
+        {
+            'label': 'global.show'|t('fbmcc'),
+            'value': 'show'
+        },
+        {
+            'label': 'global.fade'|t('fbmcc'),
+            'value': 'fade'
+        }
+    ],
+    required: false,
+    warning: _self.configWarning('greetingDialogDisplay', site.id)|trim,
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.textField({
+    label: 'settings.greeting_dialog_delay.label'|t('fbmcc'),
+    instructions: 'settings.greeting_dialog_delay.instructions'|t('fbmcc'),
+    name: 'settings[greetingDialogDelay]',
+    value: settings.getGreetingDialogDelay(site.id),
+    required: false,
+    warning: _self.configWarning('greetingDialogDelay', site.id)|trim,
+    maxlength: 4,
+    size: 5,
+    type: 'number',
+    style: 'max-width: 80px;'
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+<div class="field">
+    <div class="heading">
+        <label>{{ 'settings.hours.label'|t('fbmcc') }}</label>
+        <div class="instructions"><p>{{ 'settings.hours.instructions'|t('fbmcc', {'plugin.name': plugin.name}) }}</p></div>
+    </div>
+
+    {{ _self.table_hours(site, settings) }}
+    
+    {% set hours_warning = _self.configWarning('hours', site.id)|trim %}
+    {% if hours_warning %}<p class="warning">{{ hours_warning }}</p>{% endif %}
+</div>
+
+<hr>
+
+{# ------------------------------- #}
+
+<div class="field">
+    <div class="heading">
+        <label>{{ 'settings.sections.label'|t('fbmcc') }}</label>
+        <div class="instructions"><p>{{ 'settings.sections.instructions'|t('fbmcc', {'plugin.name': plugin.name}) }}</p></div>
+    </div>
+
+    {{ _self.table_sections(site, settings) }}
+    
+    {% set sections_warning = _self.configWarning('sections', site.id)|trim %}
+    {% if sections_warning %}<p class="warning">{{ sections_warning }}</p>{% endif %}
+</div>
+
+{# ==================================================================== #}
+{# Macros
+ # ==================================================================== #}
+
+{% macro table_hours(site, settings) %}
+    {% set start_day = currentUser.getPreference('weekStartDay') ?? craft.app.config.general.defaultWeekStartDay %}
+    {% set days = (start_day..6) %}
+
+    {% if start_day != 0 %}
+        {% set days = days|merge(0..(start_day - 1)) %}
+    {% endif %}
+
+    <table class="data fullwidth fixed-layout">
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>{{ 'settings.hours.option.opening_time.label'|t('fbmcc') }}</th>
+                <th>{{ 'settings.hours.option.closing_time.label'|t('fbmcc') }}</th>
+                <th style="text-align: right;">{{ 'settings.hours.option.closed.label'|t('fbmcc') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in days %}
+                {% set day = craft.app.locale.getWeekDayName(i) %}
+                
+                <tr>
+                    <th>{{ day|capitalize}}</th>
+                    <td>
+                        {{ forms.timeField({
+                            label: '',
+                            instructions: '',
+                            name: "settings[hours][#{i}][from]",
+                            value: settings.getHours(site.id)[i].from.time ?? '',
+                            required: false
+                        }) }}
+                    </td>
+                    <td>
+                        {{ forms.timeField({
+                            label: '',
+                            instructions: '',
+                            name: "settings[hours][#{i}][to]",
+                            value: settings.getHours(site.id)[i].to.time ?? '',
+                            required: false
+                        }) }}
+                    </td>
+                    <td style="text-align: right;">
+                        {{ forms.lightswitchField({
+                            label: '',
+                            instructions: '',
+                            name: "settings[hours][#{i}][closed]",
+                            value: 1,
+                            required: false,
+                            on: settings.getHours(site.id)[i].closed ?? false
+                        }) }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}
+
+{# ------------------------------- #}
+
+{% macro table_sections(site, settings) %}
+    <table class="data fullwidth fixed-layout">
+        <tbody>
+            {% for section in craft.app.sections.allSections %}
+                <tr>
+                    <th>{{ section.name }}</th>
+                    <td style="text-align: right;">
+                        {{ forms.lightswitchField({
+                            label: '',
+                            instructions: '',
+                            name: "settings[sections][#{section.id}]",
+                            value: 1,
+                            required: false,
+                            on: settings.getSections(site.id)[section.id] ?? false
+                        }) }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}
+
+{# ------------------------------- #}
+
+{% macro configWarning(setting, siteId = null) -%}
+    {%- set config = craft.app.config.getConfigFromFile('fbmcc') -%}
+    {%- if config[siteId][setting] is defined or config[setting] is defined -%}
+        {{- 'settings.config.warning'|t('fbmcc', {
+            'setting': setting,
+            'file': 'config/fbmcc.php'
+        })|raw }}
+    {%- else -%}
+        {{ false }}
+    {%- endif -%}
+{%- endmacro %}

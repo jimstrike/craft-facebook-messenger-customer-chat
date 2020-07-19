@@ -1,0 +1,50 @@
+{##
+ # Messenger Customer Chat plugin for Craft CMS 3.x
+ #
+ # Let people start a conversation on your website and continue in Messenger. 
+ # Allows your customers to interact with your business anytime with the same personalized, 
+ # rich-media experience they get in Messenger.
+ #
+ # @link      https://github.com/jimstrike
+ # @copyright Copyright (c) 2020 Dhimiter Karalliu
+ # @license   https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/LICENSE.md
+ #}
+{% extends "_layouts/cp.html" %}
+
+{% block actionButton %}{% endblock %}
+
+{% set crumbs = [
+    { label: plugin.name, url: url('fbmcc') }
+] %}
+
+{% block content %}{% endblock %}
+
+{% block sidebar %}
+    <nav>
+        <ul>
+            <li class="heading"><span>{{ 'subnav.getting_started.heading'|t('fbmcc') }}</span></li>
+            <li>
+                <a{{ selectedSubnavItem == 'getting-started' ? ' class="sel"' : '' }} href="{{ url('fbmcc/getting-started') }}">{{ 'subnav.getting_started.label'|t('fbmcc') }}</a>
+            </li>
+
+            {# ** #}
+
+            <li class="heading"><span>{{ 'subnav.settings.heading'|t('fbmcc') }}</span></li>
+            {% for site in craft.app.sites.allSites %}
+                <li>
+                    <a{{ selectedSubnavItem == 'settings' and site.handle == currentSite.handle ? ' class="sel"' : '' }} href="{{ url('fbmcc/settings', { 'site': site.handle }) }}">
+                        <span class="status {{ plugin.settings.isEnabled(site.id) ? 'green' : 'red' }}"></span>
+                        <span class="label">{{ site.name }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+
+            {# ** #}
+
+            <li class="heading"><span>{{ 'subnav.preview.heading'|t('fbmcc') }}</span></li>
+            <li>
+                <a href="{{ url('fbmcc/preview', {'site': currentSite.handle}) }}" target="_blank">{{ currentSite.name }} &nearr;</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}

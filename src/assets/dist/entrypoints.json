@@ -1,0 +1,13 @@
+{
+  "entrypoints": {
+    "main": {
+      "js": [
+        "/cpresources/dist/fbmcc/runtime.js",
+        "/cpresources/dist/fbmcc/main.js"
+      ],
+      "css": [
+        "/cpresources/dist/fbmcc/main.css"
+      ]
+    }
+  }
+}

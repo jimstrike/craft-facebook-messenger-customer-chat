@@ -1,0 +1,32 @@
+{##
+ # Messenger Customer Chat plugin for Craft CMS 3.x
+ #
+ # Let people start a conversation on your website and continue in Messenger. 
+ # Allows your customers to interact with your business anytime with the same personalized, 
+ # rich-media experience they get in Messenger.
+ #
+ # @link      https://github.com/jimstrike
+ # @copyright Copyright (c) 2020 Dhimiter Karalliu
+ # @license   https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/LICENSE.md
+ #}
+{% extends "fbmcc/_layout.html" %}
+
+{% set title = 'page.settings.title'|t('fbmcc') %}
+
+{% set fullPageForm = true %}
+
+{% set selectedSubnavItem = 'settings' %}
+
+{% block actionButton %}
+    <input type="submit" class="btn submit" value="{{ 'global.save'|t('fbmcc') }}">
+{% endblock %}
+
+{% block content %}
+    <h2>{{ currentSite.name }}</h2>
+    
+    {% include 'fbmcc/_default/includes/site_settings' with { 
+        'site': currentSite, 
+        'plugin': plugin, 
+        'sdkLocaleOptions': sdkLocaleOptions 
+    } %}
+{% endblock %}

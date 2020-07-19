@@ -1,0 +1,125 @@
+{##
+ # Messenger Customer Chat plugin for Craft CMS 3.x
+ #
+ # Let people start a conversation on your website and continue in Messenger. 
+ # Allows your customers to interact with your business anytime with the same personalized, 
+ # rich-media experience they get in Messenger.
+ #
+ # @link      https://github.com/jimstrike
+ # @copyright Copyright (c) 2020 Dhimiter Karalliu
+ # @license   https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/LICENSE.md
+ #}
+<p>
+    Let people start a conversation on your website and continue in Messenger. 
+    Allows your customers to interact with your business anytime with the same personalized, 
+    rich-media experience they get in Messenger.
+</p>
+
+<hr> {# ************************************************************* #}
+
+<h2>Whitelisting your domain</h2>
+<p>
+    Before enabling and using `<strong>{{ plugin.name }}</strong>` you must have a Facebook Page and whitelist your domain on your Facebook Page settings.
+</p>
+
+<h4>Page admins do the following:</h4>
+
+<ol class="data fullwidth fixed-layout">
+    <li>Login to Facebook (if your are not already logged in).</li>
+    <li>Go to <a href="https://www.facebook.com/bookmarks/pages" target="_blank">facebook.com/bookmarks/pages</a> to list your pages.</li>
+    <li>Go to your page.</li>
+    <li>Click <em>Settings</em> at the top of your Page (or <em>Page Settings</em> at the bottom left of the new Facebook layout).</li>
+    <li>Click <em>Advanced Messaging</em> on the left.</li>
+    <li>Add your domain under <em>Whitelisted Domains</em> section and click <em>Save</em>.</li>
+</ol>
+
+<hr> {# ************************************************************* #}
+
+<h2>Find your Facebook Page ID</h2>
+
+<h4>Page admins do the following:</h4>
+
+<ol class="data fullwidth fixed-layout">
+    <li>Login to Facebook (if your are not already logged in).</li>
+    <li>Go to <a href="https://www.facebook.com/bookmarks/pages" target="_blank">facebook.com/bookmarks/pages</a> to list your pages.</li>
+    <li>Go to your page.</li>
+    <li>Click <em>Settings</em> at the top of your Page (or <em>Page Settings</em> at the bottom left of the new Facebook layout).</li>
+    <li>Click <em>Messaging</em> on the left.</li>
+    <li>Scroll down to <em>Your Messenger URL</em> section.</li>
+    <li>
+        You will find your Messenger link that looks something like this:<br>
+        <code>m.me/543210123456789</code><br>
+        The numeric part of the URL after <code>m.me/</code> is your Facebook Page ID.
+    </li>
+</ol>
+
+<h4>If the part of the the URL after <code>m.me/</code> is not numeric then try this:</h4>
+
+<ol>
+    <li>Go to your Facebook Page.</li>
+    <li>Right click anywhere on your screen and then choose <em>View Page Source</em>.</li>
+    <li>On page source search for (Ctrl/Cmd + F) <em>page_id</em>.</li>
+    <li>The numeric part after <code>page_id=</code> is your Facebook Page ID.</li>
+</ol>
+
+<hr> {# ************************************************************* #}
+
+<h2>Using `{{ plugin.name }}` on your site</h2>
+<p>
+    Go to `{{ plugin.name }}` <a href="{{ url('fbmcc/settings') }}"><strong>site settings</strong></a>, 
+    provide your Facebook Page ID and then save. Preview it and adjust its settings until your are satisfied. Enable it.
+</p>
+
+<hr> {# ************************************************************* #}
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Where can I find more information on Messenger Customer Chat?</h3>
+You can find more information on the <a href="https://developers.facebook.com/docs/messenger-platform/discovery/customer-chat-plugin" target="_blank">Messenger Customer Chat page &nearr;</a>.
+
+<h3>What do I need before setting up Messenger Customer Chat on my website?</h3>
+You will need to have a published Facebook Page, its Page ID and be logged into Facebook on your computer or device.
+
+<h3>How does the plugin work?</h3>
+The plugin is a snippet of JavaScript code that runs on your Craft website. 
+There will be a small Messenger chat bubble that loads with your website in the lower right corner. 
+Your customers can click on it at anytime and message you. It works on both mobile and desktop. 
+You can find more information in Facebook Developer Docs on the 
+<a href="https://developers.facebook.com/docs/messenger-platform/discovery/customer-chat-plugin" target="_blank">Messenger Customer Chat page &nearr;</a>.
+
+<h3>Where can I see all my messages?</h3>
+On the desktop, you can see all messages in your Page Inbox. Navigate to your Facebook Page on Facebook 
+and click on 'Inbox' at the top. On mobile, you can download the Facebook Pages Manager app and navigate to Inbox. 
+You can also link your Page account to your Messenger app and access all your messages there.
+
+<h3>What permissions do I need on a Page to enable the Messenger customer chat feature?</h3>
+You need be an administrator of the Page.
+
+<h3>Can I see messaging analytics for my Facebook page?</h3>
+On the desktop, go to your Facebook page, and click on Insights on the Navigation bar. 
+On the left hand side, click on Messaging to see your messaging analytics.
+
+<h3>Why are some of my users seeing an additional confirmation window after clicking "Chat Now"?</h3>
+A "Continue As" popup is shown infrequently for security purposes. Most signed-in users will only have to 
+click the plugin itself to opt in, without having to re-confirm. Additionally, as more users message 
+you via the plugin, the "Continue As" popup will be shown less often.
+
+<hr> {# ************************************************************* #}
+
+<h2>Troubleshooting tips</h2>
+
+<h4>If you're having trouble getting the plugin to render properly, try the tips below:</h4>
+
+<p>If you see a console error like "<code>Refused to display *** in a frame because an ancestor violates the following Content Security Policy directive: ***</code>", 
+    check that the domain of the page the plugin is being rendered on has been whitelisted and that your <code>Facebook Page ID</code> is being entered correctly. Also make sure you didn't set the <code>Referrer-Policy</code> header to <code>no-referrer</code>.
+</p>
+<p>
+    The Firefox Facebook Container Add-On prevents the plugin from showing up. Remove the add on if you want the plugin to render.
+</p>
+<p>
+    Firefox desktop private browsers (version 63 and above) and Firefox mobile browsers block content tracking by default which will prevent the plugin from rendering. Turn off content blocking (click the gray shield in the search bar) to see the plugin render.
+</p>
+
+<hr>
+
+For more info check out <a href="https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/README.md" target="_blank">README &nearr;</a> on GitHub.
