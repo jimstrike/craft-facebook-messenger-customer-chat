@@ -33,7 +33,7 @@
             {% for site in craft.app.sites.allSites %}
                 <li>
                     <a{{ selectedSubnavItem == 'settings' and site.handle == currentSite.handle ? ' class="sel"' : '' }} href="{{ url('fbmcc/settings', { 'site': site.handle }) }}">
-                        <span class="status {{ plugin.settings.isEnabled(site.id) ? 'green' : 'red' }}"></span>
+                        <span class="status {{ plugin.settings.getEnabled(site.id) ? 'green' : 'red' }}"></span>
                         <span class="label">{{ site.name }}</span>
                     </a>
                 </li>
