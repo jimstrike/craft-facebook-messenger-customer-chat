@@ -101,13 +101,13 @@ return [
     'useCodeSnippet' => false,
 
     /**
-     * Code snippet copied directly from Facebook page settings.
-     * This code will be inserted if 'useCodeSnippet' is true 
-     * and 'codeSnippet' is not empty.
+     * Code snippet copied directly from:
+     * Facebook page → Settings → Messaging → Add Messenger to your website.
+     * This code will be inserted if 'useCodeSnippet' is true and 'codeSnippet' is not empty.
      * 
      * @var string
      */
-    'codeSnippet' => (string)include 'path/to/file/with/codesnippet',
+    'codeSnippet' => (string)\file_get_contents(CRAFT_BASE_PATH . '/templates/path/to/code_snippet'),
     
     /**
      * Display plugin by opening hours.

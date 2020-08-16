@@ -4,6 +4,7 @@
 
 ### Added
 - Added support for using code snippet copied directly from Facebook page settings.
+- New translations.
 
 ### Changed
 - Updated Graph API to the current (v8.0) version.

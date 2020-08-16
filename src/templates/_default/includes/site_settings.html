@@ -156,7 +156,7 @@
 
 {{ forms.lightswitchField({
     label: 'settings.use_code_snippet.label'|t('fbmcc', {'plugin.name': "&quot;#{plugin.name}&quot;"}),
-    instructions: 'settings.use_code_snippet.instructions'|t('fbmcc', { 'settings.code_snippet.label': '<b>' ~ 'settings.code_snippet.label'|t('fbmcc') ~ '</b>' }),
+    instructions: 'settings.use_code_snippet.instructions'|t('fbmcc', {'settings.code_snippet.label': '<b>' ~ 'settings.code_snippet.label'|t('fbmcc') ~ '</b>'}),
     name: 'settings[useCodeSnippet]',
     value: 1,
     required: false,
@@ -170,7 +170,7 @@
 
 {{ forms.textareaField({
     label: 'settings.code_snippet.label'|t('fbmcc'),
-    instructions: 'settings.code_snippet.instructions'|t('fbmcc', { 'settings.use_code_snippet.label': '<b>' ~ 'settings.use_code_snippet.label'|t('fbmcc') ~ '</b>' }),
+    instructions: 'settings.code_snippet.instructions'|t('fbmcc', {'settings.use_code_snippet.label': '<b>' ~ 'settings.use_code_snippet.label'|t('fbmcc') ~ '</b>', 'plugin.name': plugin.name}),
     name: 'settings[codeSnippet]',
     value: settings.getCodeSnippet(site.id),
     required: false,
