@@ -53,7 +53,7 @@ class Plugin extends \craft\base\Plugin
      * @inheritdoc
      * @var string
      */
-    public $schemaVersion = '1.0.2';
+    public $schemaVersion = '1.0.3';
 
     /**
      * @inheritdoc
@@ -122,7 +122,7 @@ class Plugin extends \craft\base\Plugin
         });*/
 
         // Insert SDK snippet (frontend) right after the opening of <body> tag
-        Event::on(View::class, View::EVENT_BEGIN_BODY, function(Event $event) {
+        Event::on(View::class, View::EVENT_BEGIN_BODY, function() {
             $this->_sdkSnippet();
         });
 

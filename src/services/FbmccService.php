@@ -30,7 +30,7 @@ class FbmccService extends Component
      * FB jssdk version
      * @var string
      */
-    const FB_GRAPH_API_VERSION = 'v7.0';
+    const FB_GRAPH_API_VERSION = 'v8.0';
 
     /**
      * FB Customer Chat script src
@@ -184,44 +184,5 @@ class FbmccService extends Component
     private function _fbLocales(): array
     {
         return include Plugin::$plugin->getBasePath() . '/etc/locales/facebook.php';
-    }
-
-    /**
-     * 
-     * @return string
-     */
-    private function _codeSnippetSample(): string
-    {
-        /*
-            <!-- Load Facebook SDK for JavaScript -->
-            <div id="fb-root"></div>
-            <script>
-                window.fbAsyncInit = function() {
-                    FB.init({
-                        xfbml            : true,
-                        version          : 'v7.0'
-                    });
-                };
-
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s); js.id = id;
-                    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-            </script>
-
-            <!-- Your Chat Plugin code -->
-            <div class="fb-customerchat"
-                attribution=setup_tool
-                page_id="PAGE_ID"
-                theme_color="#0084ff"
-                logged_in_greeting="Hi! How can we help you?"
-                logged_out_greeting="Hi! How can we help you?">
-            </div>
-        */
-
-        return '<!-- code snippet sample -->';
     }
 }
