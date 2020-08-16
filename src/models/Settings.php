@@ -36,6 +36,8 @@ class Settings extends Model
     public $loggedOutGreeting;
     public $greetingDialogDisplay;
     public $greetingDialogDelay;
+    public $useCodeSnippet;
+    public $codeSnippet;
     public $hours;
     public $sections;
 
@@ -148,6 +150,30 @@ class Settings extends Model
         $delay = (int)$setting ?? 3;
         
         return abs((int)$delay);
+    }
+
+    /**
+     * @param int|null $siteId default
+     * 
+     * @return string
+     */
+    public function getCodeSnippet(int $siteId = null): string
+    {
+        $setting = \trim($this->_getSetting('codeSnippet', $siteId));
+
+        return $setting ?: '';
+    }
+
+    /**
+     * @param int|null $siteId default
+     * 
+     * @return bool
+     */
+    public function getUseCodeSnippet(int $siteId = null): bool
+    {
+        $setting = $this->_getSetting('useCodeSnippet', $siteId);
+        
+        return (bool)$setting ?: false;
     }
 
     /**

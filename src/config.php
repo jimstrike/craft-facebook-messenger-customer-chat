@@ -91,6 +91,23 @@ return [
      * @var int 
      */
     'greetingDialogDelay' => 3,
+
+    /**
+     * Whether to use code snippet copied directly 
+     * from Facebook page settings instead of customizing it.
+     * 
+     * @var bool 
+     */
+    'useCodeSnippet' => false,
+
+    /**
+     * Code snippet copied directly from Facebook page settings.
+     * This code will be inserted if 'useCodeSnippet' is true 
+     * and 'codeSnippet' is not empty.
+     * 
+     * @var string
+     */
+    'codeSnippet' => (string)include 'path/to/file/with/codesnippet',
     
     /**
      * Display plugin by opening hours.

@@ -109,6 +109,15 @@ class FbmccService extends Component
      */
     public function sdkSnippet(int $siteId = null, string $locale = ''): string
     {
+        $settings = Plugin::$plugin->getSettings();
+
+        if ($settings->getUseCodeSnippet($siteId) && !empty($settings->getCodeSnippet($siteId))) {
+            return "\n<!-- start Facebook Messenger Custom Chat (fbmcc) with code snippet -->\n"
+                . $settings->getCodeSnippet($siteId)
+                . "\n<!-- end Facebook Messenger Custom Chat (fbmcc) with code snippet -->\n"
+            ;
+        }
+
         $locale = Helpers\Sanitize::locale($locale, '-', '_');
 
         return "\n<!-- start Facebook Messenger Custom Chat (fbmcc) -->\n"

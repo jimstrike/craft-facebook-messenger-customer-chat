@@ -154,6 +154,34 @@
 
 {# ------------------------------- #}
 
+{{ forms.lightswitchField({
+    label: 'settings.use_code_snippet.label'|t('fbmcc', {'plugin.name': "&quot;#{plugin.name}&quot;"}),
+    instructions: 'settings.use_code_snippet.instructions'|t('fbmcc', { 'settings.code_snippet.label': '<b>' ~ 'settings.code_snippet.label'|t('fbmcc') ~ '</b>' }),
+    name: 'settings[useCodeSnippet]',
+    value: 1,
+    required: false,
+    warning: _self.configWarning('useCodeSnippet', site.id)|trim,
+    on: settings.getUseCodeSnippet(site.id)
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.textareaField({
+    label: 'settings.code_snippet.label'|t('fbmcc'),
+    instructions: 'settings.code_snippet.instructions'|t('fbmcc', { 'settings.use_code_snippet.label': '<b>' ~ 'settings.use_code_snippet.label'|t('fbmcc') ~ '</b>' }),
+    name: 'settings[codeSnippet]',
+    value: settings.getCodeSnippet(site.id),
+    required: false,
+    warning: _self.configWarning('codeSnippet', site.id)|trim,
+    rows: 5
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
 <div class="field">
     <div class="heading">
         <label>{{ 'settings.hours.label'|t('fbmcc') }}</label>
