@@ -91,6 +91,23 @@ return [
      * @var int 
      */
     'greetingDialogDelay' => 3,
+
+    /**
+     * Whether to use code snippet copied directly 
+     * from Facebook page settings instead of customizing it.
+     * 
+     * @var bool 
+     */
+    'useCodeSnippet' => false,
+
+    /**
+     * Code snippet copied directly from:
+     * Facebook page → Settings → Messaging → Add Messenger to your website.
+     * This code will be inserted if 'useCodeSnippet' is true and 'codeSnippet' is not empty.
+     * 
+     * @var string
+     */
+    'codeSnippet' => (string)\file_get_contents(CRAFT_BASE_PATH . '/templates/path/to/code_snippet'),
     
     /**
      * Display plugin by opening hours.

@@ -154,11 +154,40 @@
 
 {# ------------------------------- #}
 
+{{ forms.lightswitchField({
+    label: 'settings.use_code_snippet.label'|t('fbmcc', {'plugin.name': "&quot;#{plugin.name}&quot;"}),
+    instructions: 'settings.use_code_snippet.instructions'|t('fbmcc', {'settings.code_snippet.label': '<b>' ~ 'settings.code_snippet.label'|t('fbmcc') ~ '</b>'}),
+    name: 'settings[useCodeSnippet]',
+    value: 1,
+    required: false,
+    warning: _self.configWarning('useCodeSnippet', site.id)|trim,
+    on: settings.getUseCodeSnippet(site.id)
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.textareaField({
+    label: 'settings.code_snippet.label'|t('fbmcc'),
+    instructions: 'settings.code_snippet.instructions'|t('fbmcc', {'settings.use_code_snippet.label': '<b>' ~ 'settings.use_code_snippet.label'|t('fbmcc') ~ '</b>', 'plugin.name': plugin.name}),
+    name: 'settings[codeSnippet]',
+    value: settings.getCodeSnippet(site.id),
+    required: false,
+    warning: _self.configWarning('codeSnippet', site.id)|trim,
+    rows: 5
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
 <div class="field">
     <div class="heading">
         <label>{{ 'settings.hours.label'|t('fbmcc') }}</label>
-        <div class="instructions"><p>{{ 'settings.hours.instructions'|t('fbmcc', {'plugin.name': plugin.name}) }}</p></div>
     </div>
+
+    <div class="instructions"><p>{{ 'settings.hours.instructions'|t('fbmcc', {'plugin.name': plugin.name}) }}</p></div>
 
     {{ _self.table_hours(site, settings) }}
     
@@ -173,8 +202,9 @@
 <div class="field">
     <div class="heading">
         <label>{{ 'settings.sections.label'|t('fbmcc') }}</label>
-        <div class="instructions"><p>{{ 'settings.sections.instructions'|t('fbmcc', {'plugin.name': plugin.name}) }}</p></div>
     </div>
+
+    <div class="instructions"><p>{{ 'settings.sections.instructions'|t('fbmcc', {'plugin.name': plugin.name}) }}</p></div>
 
     {{ _self.table_sections(site, settings) }}
     

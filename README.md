@@ -82,9 +82,23 @@ Before enabling and using "Messenger Customer Chat" you must have a Facebook Pag
 - On page source search for (Ctrl/Cmd + F) `page_id`.
 - The numeric part after `page_id=` is your Facebook Page ID.
 
+### Let people chat as a Guest
+
+**Page admins do the following:**
+
+- Login to Facebook (if your are not already logged in).
+- Go to [facebook.com/bookmarks/pages](https://www.facebook.com/bookmarks/pages) to list your pages.
+- Go to your page.
+- Click **Settings** at the top of your Page (or Page Settings at the bottom left of the new Facebook layout).
+- Click **Messaging** on the left.
+- Scroll down to **Add Messenger to your website** section. and then click **Get Started**.
+- A modal window will pop up.
+- Toggle **Guest Mode Status** on/off under **Let People Chat as a Guest**.
+- Click **Next** until you finish and close the modal window.
+
 ### Using "Messenger Customer Chat" on your site
 
-Go to "Messenger Customer Chat" site settings, provide your Facebook Page ID and then save. Preview it and adjust its settings until your are satisfied. Enable it.
+Go to "Messenger Customer Chat" site settings, provide your Facebook Page ID and/or code snippet copied from "Facebook page → Settings → Messaging → Add Messenger to your website" and then save. Preview it and adjust its settings until your are satisfied. Enable it.
 
 ## Advanced configuration
 

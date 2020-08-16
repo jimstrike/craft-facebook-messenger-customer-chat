@@ -54,6 +54,8 @@ return [
     'settings.logged_out_greeting.label' => 'Logged out greeting',
     'settings.greeting_dialog_display.label' => 'Greeting dialog display',
     'settings.greeting_dialog_delay.label' => 'Greeting dialog delay',
+    'settings.use_code_snippet.label' => 'Use code snippet copied directly from Facebook instead?',
+    'settings.code_snippet.label' => 'Code snippet copied directly from Facebook',
     'settings.hours.label' => 'Opening hours',
     'settings.hours.option.opening_time.label' => 'Opening time',
     'settings.hours.option.closing_time.label' => 'Closing time',
@@ -69,6 +71,8 @@ return [
     'settings.logged_out_greeting.instructions' => 'The greeting text that will be displayed if the user is currently not logged in to Facebook. Maximum 80 characters.',
     'settings.greeting_dialog_display.instructions' => 'Sets how the greeting dialog will be displayed.',
     'settings.greeting_dialog_delay.instructions' => 'Sets the number of seconds of delay before the greeting dialog is shown after the plugin is loaded. This can be used to customize when you want the greeting dialog to appear.',
+    'settings.use_code_snippet.instructions' => 'Enabling this setting will discard attribute settings above and insert the code pasted into "{settings.code_snippet.label}" field.',
+    'settings.code_snippet.instructions' => 'Paste here the code snippet copied from your "Facebook page → Settings → Messaging → Add Messenger to your website". If "{settings.use_code_snippet.label}" is enabled then the code snippet pasted here will be inserted and used to display the "{plugin.name}" dialog.',
     'settings.hours.instructions' => 'Determines when the `{plugin.name}` must be displayed (if the criteria are met) by combining the opening hours below taking precedence over the `Enabled` setting when it is turned on.',
     'settings.sections.instructions' => 'Determines whether `{plugin.name}` must be displayed only on selected sections or all sections if none selected.',
 
