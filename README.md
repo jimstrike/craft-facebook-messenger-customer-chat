@@ -98,7 +98,7 @@ Before enabling and using "Messenger Customer Chat" you must have a Facebook Pag
 
 ### Using "Messenger Customer Chat" on your site
 
-Go to "Messenger Customer Chat" site settings, provide your Facebook Page ID and then save. Preview it and adjust its settings until your are satisfied. Enable it.
+Go to "Messenger Customer Chat" site settings, provide your Facebook Page ID and/or code snippet copied from "Facebook page → Settings → Messaging → Add Messenger to your website" and then save. Preview it and adjust its settings until your are satisfied. Enable it.
 
 ## Advanced configuration
 
