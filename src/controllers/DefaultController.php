@@ -46,8 +46,6 @@ class DefaultController extends BaseController
 
     public function init()
     {
-        $this->requireAdmin();
-
         parent::init();
     }
 

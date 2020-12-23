@@ -42,7 +42,7 @@ cd /path/to/my/craft-project
 composer require jimstrike/craft-facebook-messenger-customer-chat
 
 # Tell Craft to install the plugin
-./craft install/plugin fbmcc
+./craft plugin/install fbmcc
 ```
 
 ## Configuring Messenger Customer Chat plugin
@@ -58,8 +58,8 @@ Before enabling and using "Messenger Customer Chat" you must have a Facebook Pag
 - Login to Facebook (if your are not already logged in).
 - Go to [facebook.com/bookmarks/pages](https://www.facebook.com/bookmarks/pages) to list your pages.
 - Go to your page.
-- Click **Settings** at the top of your Page (or Page Settings at the bottom left of the new Facebook layout).
-- Click **Advanced Messaging** on the left.
+- Click **Settings** on the left under "Manage Page".
+- Click **Advanced Messaging** on the left under "Page Settings".
 - Add your domain under **Whitelisted Domains** section and click Save.
 
 ### Find your Facebook Page ID
@@ -69,8 +69,8 @@ Before enabling and using "Messenger Customer Chat" you must have a Facebook Pag
 - Login to Facebook (if your are not already logged in).
 - Go to [facebook.com/bookmarks/pages](https://www.facebook.com/bookmarks/pages) to list your pages.
 - Go to your page.
-- Click **Settings** at the top of your Page (or Page Settings at the bottom left of the new Facebook layout).
-- Click **Messaging** on the left.
+- Click **Settings** on the left under "Manage Page".
+- Click **Messaging** on the left under "Page Settings".
 - Scroll down to **Your Messenger URL** section.
 - You will find your Messenger link that looks something like this:
 `m.me/543210123456789`. The numeric part of the URL after `m.me/` is your Facebook Page ID.
@@ -89,11 +89,11 @@ Before enabling and using "Messenger Customer Chat" you must have a Facebook Pag
 - Login to Facebook (if your are not already logged in).
 - Go to [facebook.com/bookmarks/pages](https://www.facebook.com/bookmarks/pages) to list your pages.
 - Go to your page.
-- Click **Settings** at the top of your Page (or Page Settings at the bottom left of the new Facebook layout).
-- Click **Messaging** on the left.
+- Click **Settings** on the left under "Manage Page".
+- Click **Messaging** on the left under "Page Settings".
 - Scroll down to **Add Messenger to your website** section. and then click **Get Started**.
 - A modal window will pop up.
-- Toggle **Guest Mode Status** on/off under **Let People Chat as a Guest**.
+- Toggle **Guest Chat** on/off under **Guest Chat**.
 - Click **Next** until you finish and close the modal window.
 
 ### Using "Messenger Customer Chat" on your site
