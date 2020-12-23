@@ -13,6 +13,10 @@
 
 {% block actionButton %}{% endblock %}
 
+{% set bodyClass = "ns-#{plugin.handle}" %}
+
+{% css %}.ns-fbmcc .field .input textarea.code { font-family: 'Menlo', 'Consolas', 'Monaco', monospace, 'Courier New', 'Courier'; color: #666; }{% endcss %}
+
 {% set crumbs = [
     { label: plugin.name, url: url('fbmcc') }
 ] %}

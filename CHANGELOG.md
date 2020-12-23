@@ -1,5 +1,12 @@
 # Release Notes for Messenger Customer Chat
 
+## 1.1.1 - 2020-12-23
+
+### Changed
+- Updated README and "getting started" documentation.
+- Removed requireAdmin() from default controller init method so that plugin access can be granted to user/group through permissions.
+- Updated plugin css.
+
 ## 1.1.0 - 2020-08-16
 
 ### Added
