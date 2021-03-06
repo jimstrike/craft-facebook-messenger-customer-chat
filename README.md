@@ -2,7 +2,7 @@
 
 Let people start a conversation on your website and continue in Messenger. Allows your customers to interact with your business anytime with the same personalized, rich-media experience they get in Messenger.
 
-![Screenshot](resources/images/icon-192.png)
+![Screenshot](src/assets/dist/images/icon-192.png)
 
 ## Overview
 
@@ -205,3 +205,5 @@ If you're having trouble getting the plugin to render properly, try the tips bel
 - The Firefox Facebook Container Add-On prevents the plugin from showing up. Remove the add on if you want the plugin to render.
 
 - Firefox desktop private browsers (version 63 and above) and Firefox mobile browsers block content tracking by default which will prevent the plugin from rendering. Turn off content blocking (click the gray shield in the search bar) to see the plugin render.
+
+- DuckDuckGo Privacy Essentials extension will prevent the plugin from shoing up. Remove the extension or turn off Site Privacy Protection if you want the plugin to render.

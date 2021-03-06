@@ -1,5 +1,18 @@
 # Release Notes for Messenger Customer Chat
 
+## 1.1.2 - 2020-03-06
+
+### Changed
+
+- Updated documentation.
+- Removed requireAdmin() when saving settings so that plugin access can be granted to user/group through permissions.
+- Removed files which are no longer used.
+- Cleaned up repo.
+
+### Fixed
+
+- Fixed a bug so that getFullPath won 't be called from console requests.
+
 ## 1.1.1 - 2020-12-23
 
 ### Changed
