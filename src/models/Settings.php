@@ -219,8 +219,12 @@ class Settings extends Model
      */
     public function getRef(): string
     {
-        if (empty($this->ref)) {
-            return Plugin::baseRequestUrlAndFullPath();
+        $request = Craft::$app->getRequest();
+
+        if (!$request->getIsConsoleRequest()) {
+            if (empty($this->ref)) {
+                return Plugin::baseRequestUrlAndFullPath();
+            }
         }
 
         return $this->ref;

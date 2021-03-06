@@ -53,7 +53,7 @@ class Plugin extends \craft\base\Plugin
      * @inheritdoc
      * @var string
      */
-    public $schemaVersion = '1.1.1';
+    public $schemaVersion = '1.1.2';
 
     /**
      * @inheritdoc
@@ -165,7 +165,12 @@ class Plugin extends \craft\base\Plugin
     protected function createSettingsModel()
     {
         $settings = new Settings();
-        $settings->setRef(self::baseRequestUrlAndFullPath());
+
+        $request = Craft::$app->getRequest();
+
+        if (!$request->getIsConsoleRequest()) {
+            $settings->setRef(self::baseRequestUrlAndFullPath());
+        }
         
         return $settings;
     }

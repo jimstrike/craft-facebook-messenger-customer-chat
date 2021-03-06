@@ -17,7 +17,7 @@
 
 {{ actionInput('fbmcc/default/save-settings') }}
 {{ redirectInput('fbmcc/settings?site=' ~ site.handle) }}
-{{ csrfInput() }}
+{#{ csrfInput() }#} {# already included by Craft #}
 <input type="hidden" name="siteId" value="{{ site.id }}">
 
 {# ------------------------------- #}
