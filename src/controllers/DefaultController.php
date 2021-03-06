@@ -132,7 +132,6 @@ class DefaultController extends BaseController
     public function actionSaveSettings()
     {
         $this->requirePostRequest();
-        $this->requireAdmin();
 
         $params = Craft::$app->getRequest()->getBodyParams();
         
