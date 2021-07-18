@@ -2,7 +2,7 @@
     "name": "jimstrike/craft-facebook-messenger-customer-chat",
     "description": "Messenger Customer Chat",
     "type": "craft-plugin",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "keywords": [
         "craft",
         "cms",
@@ -43,7 +43,7 @@
     "extra": {
         "handle": "fbmcc",
         "name": "Messenger Customer Chat",
-        "developer": "Dhimiter Karalliu",
+        "developer": "Jimstrike",
         "description": "Let people start a conversation on your website and continue in Messenger. Allows your customers to interact with your business anytime with the same personalized, rich-media experience they get in Messenger.",
         "changelogUrl": "https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/CHANGELOG.md",
         "documentationUrl": "https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/README.md"

@@ -1,6 +1,12 @@
 # Release Notes for Messenger Customer Chat
 
-## 1.1.2 - 2020-03-06
+## 1.1.3 - 2021-07-18
+
+### Changed
+
+- Updated composer extras. No changes made in codebase.
+
+## 1.1.2 - 2021-03-06
 
 ### Changed
 
