@@ -1,4 +1,4 @@
-# Messenger Customer Chat plugin for Craft CMS 3.x|4.x
+# Messenger Customer Chat plugin for Craft CMS 4.x
 
 Let people start a conversation on your website and continue in Messenger. Allows your customers to interact with your business anytime with the same personalized, rich-media experience they get in Messenger.
 
@@ -22,7 +22,7 @@ You can learn more about Messenger Customer Chat by clicking [here](https://deve
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0 or later.
+This plugin requires Craft CMS 4.0.0 or later.
 
 In order to use the Messenger Customer Chat plugin, you will need to have a published Facebook Page. You can find a list of your Facebook Pages by following this [link](https://www.facebook.com/bookmarks/pages). If you do not have a Facebook Page, you can create one for free [here](https://www.facebook.com/pages/creation/?ref_type=pages_you_admin).
 

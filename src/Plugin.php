@@ -7,7 +7,7 @@
  * rich-media experience they get in Messenger.
  *
  * @link      https://github.com/jimstrike
- * @copyright Copyright (c) 2020 Dhimiter Karalliu
+ * @copyright Copyright (c) Dhimiter Karalliu
  * @license   https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/LICENSE.md
  */
 
@@ -53,7 +53,7 @@ class Plugin extends \craft\base\Plugin
      * @inheritdoc
      * @var string
      */
-    public string $schemaVersion = '1.1.3';
+    public string $schemaVersion = '2.0.0';
 
     /**
      * @inheritdoc

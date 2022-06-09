@@ -7,7 +7,7 @@
  * rich-media experience they get in Messenger.
  *
  * @link      https://github.com/jimstrike
- * @copyright Copyright (c) 2020 Dhimiter Karalliu
+ * @copyright Copyright (c) Dhimiter Karalliu
  * @license   https://github.com/jimstrike/craft-facebook-messenger-customer-chat/blob/master/LICENSE.md
  */
 
