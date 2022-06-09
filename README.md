@@ -42,7 +42,7 @@ cd /path/to/my/craft-project
 composer require jimstrike/craft-facebook-messenger-customer-chat
 
 # Tell Craft to install the plugin
-./craft plugin/install fbmcc
+php craft plugin/install fbmcc
 ```
 
 ## Configuring Messenger Customer Chat plugin
