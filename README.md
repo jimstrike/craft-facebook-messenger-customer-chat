@@ -1,4 +1,4 @@
-# Messenger Customer Chat plugin for Craft CMS 3.x
+# Messenger Customer Chat plugin for Craft CMS 3.x|4.x
 
 Let people start a conversation on your website and continue in Messenger. Allows your customers to interact with your business anytime with the same personalized, rich-media experience they get in Messenger.
 

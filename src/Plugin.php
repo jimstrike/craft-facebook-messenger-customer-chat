@@ -1,6 +1,6 @@
 <?php
 /**
- * Messenger Customer Chat plugin for Craft CMS 3.x
+ * Messenger Customer Chat plugin for Craft CMS 4.x
  *
  * Let people start a conversation on your website and continue in Messenger. 
  * Allows your customers to interact with your business anytime with the same personalized, 
@@ -53,19 +53,19 @@ class Plugin extends \craft\base\Plugin
      * @inheritdoc
      * @var string
      */
-    public $schemaVersion = '1.1.3';
+    public string $schemaVersion = '1.1.3';
 
     /**
      * @inheritdoc
      * @var bool
      */
-    public $hasCpSettings = true;
+    public bool $hasCpSettings = true;
 
     /**
      * @inheritdoc
      * @var bool
      */
-    public $hasCpSection = true;
+    public bool $hasCpSection = true;
 
     /**
      * @var string
@@ -162,7 +162,7 @@ class Plugin extends \craft\base\Plugin
      * 
      * @return Settings|null
      */
-    protected function createSettingsModel()
+    protected function createSettingsModel(): ?craft\base\Model
     {
         $settings = new Settings();
 
@@ -178,7 +178,7 @@ class Plugin extends \craft\base\Plugin
     /**
      * @inheritdoc
      */
-    public function getSettingsResponse()
+    public function getSettingsResponse(): mixed
     {
         return Craft::$app->getResponse()->redirect(UrlHelper::cpUrl('fbmcc/settings'));
     }
@@ -207,8 +207,7 @@ class Plugin extends \craft\base\Plugin
      */
     public static function baseRequestUrlAndFullPath(): string
     {
-        //return \yii\helpers\Url::base(true) . Craft::$app->getRequest()->getUrl();
-        return \rtrim(UrlHelper::baseRequestUrl(), '/') . '/' . \ltrim(Craft::$app->getRequest()->getFullPath(), '/');
+        return \rtrim(UrlHelper::baseUrl(), '/') . '/' . \ltrim(Craft::$app->getRequest()->getFullPath(), '/');
     }
 
     /**
