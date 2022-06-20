@@ -207,3 +207,18 @@ If you're having trouble getting the plugin to render properly, try the tips bel
 - Firefox desktop private browsers (version 63 and above) and Firefox mobile browsers block content tracking by default which will prevent the plugin from rendering. Turn off content blocking (click the gray shield in the search bar) to see the plugin render.
 
 - DuckDuckGo Privacy Essentials extension will prevent the plugin from shoing up. Remove the extension or turn off Site Privacy Protection if you want the plugin to render.
+
+## Craft 3
+
+To use this plugin with CraftCMS 3 you need to install it from the latest v1.* tag version. [Here's a list of all tags](https://github.com/jimstrike/craft-facebook-messenger-customer-chat/tags).
+
+```bash
+# Go to project directory
+cd /path/to/my/craft-project
+
+# Tell Composer to load the plugin
+composer require jimstrike/craft-facebook-messenger-customer-chat:1.1.3
+
+# Tell Craft to install the plugin
+php craft plugin/install fbmcc
+```
