@@ -210,7 +210,7 @@ If you're having trouble getting the plugin to render properly, try the tips bel
 
 ## Craft 3
 
-To use this plugin with Craft 3 you need to install it from the latest v1.* tag version. [Here's a list of all tags](https://github.com/jimstrike/craft-facebook-messenger-customer-chat/tags).
+To use this plugin with Craft 3 you need to install it from the latest v1.* tag version. [View all tags](https://github.com/jimstrike/craft-facebook-messenger-customer-chat/tags).
 
 ```bash
 # Go to project directory
