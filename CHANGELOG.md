@@ -1,6 +1,6 @@
 # Release Notes for Messenger Customer Chat
 
-## 2.1.0 - 2025-05-27
+## 2.1.0 - 2024-05-27
 
 ### Changed
 
