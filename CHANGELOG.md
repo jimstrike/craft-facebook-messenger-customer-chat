@@ -1,5 +1,11 @@
 # Release Notes for Messenger Customer Chat
 
+## 2.1.0 - 2025-05-27
+
+### Changed
+
+- Updated plugin for Craft 5.
+
 ## 2.0.0 - 2022-06-21
 
 ### Changed

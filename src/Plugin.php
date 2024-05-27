@@ -1,6 +1,6 @@
 <?php
 /**
- * Messenger Customer Chat plugin for Craft CMS 4.x
+ * Messenger Customer Chat plugin for Craft CMS 4.x|5.x
  *
  * Let people start a conversation on your website and continue in Messenger. 
  * Allows your customers to interact with your business anytime with the same personalized, 
@@ -53,7 +53,7 @@ class Plugin extends \craft\base\Plugin
      * @inheritdoc
      * @var string
      */
-    public string $schemaVersion = '2.0.0';
+    public string $schemaVersion = '2.1.0';
 
     /**
      * @inheritdoc
