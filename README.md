@@ -6,6 +6,8 @@
 
 > @see: https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin
 
+> We recommend using [Intercom Messenger](https://github.com/jimstrike/craft-intercom-messenger) instead.
+
 ---
 
 Let people start a conversation on your website and continue in Messenger. Allows your customers to interact with your business anytime with the same personalized, rich-media experience they get in Messenger.
