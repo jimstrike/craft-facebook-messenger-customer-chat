@@ -1,12 +1,12 @@
 # Messenger Customer Chat plugin for Craft CMS 4.x
 
-```
-NOTE: This Craft plugin is no longer maintained.
+> NOTE: This Craft plugin is no longer maintained.
 
-On May 9, 2024, Facebook has discontinued its Chat Plugin and you will no longer be able to access any of the functionality of the Chat Plugin.
+> On May 9, 2024, Facebook has discontinued its Chat Plugin and you will no longer be able to access any of the functionality of the Chat Plugin.
 
-https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin
-```
+> @see: https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin
+
+---
 
 Let people start a conversation on your website and continue in Messenger. Allows your customers to interact with your business anytime with the same personalized, rich-media experience they get in Messenger.
 
