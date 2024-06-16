@@ -279,7 +279,7 @@
 {% macro table_sections(site, settings) %}
     <table class="data fullwidth fixed-layout">
         <tbody>
-            {% for section in craft.app.sections.allSections %}
+            {% for section in craft.app.entries.allSections %}
                 <tr>
                     <th>{{ section.name }}</th>
                     <td style="text-align: right;">
